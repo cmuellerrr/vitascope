@@ -1,0 +1,22 @@
+# Site settings
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://vitascopearts.com" # the base hostname & protocol for your site
+blogurl: "http://vitascopearts.tumblr.com"
+
+title: Vitascope Arts
+description: > # this means to ignore newlines until "baseurl:"
+  Vitascrope Arts is a full service production company, from concept to
+  final cut. We make videos and commercials for businesses with something
+  to say.
+
+twitter_username: vitascopearts
+instagram_username: vitascopearts
+youtube_username: UC0vPMH-qsWhaskmWM2vW_1g
+email: hello@vitascopearts.com
+phone: (123) 123-1234
+
+mailto: "mailto:hello@vitascopearts.com?Subject=Hello Vitascope!"
+
+
+# Build settings
+markdown: kramdown
