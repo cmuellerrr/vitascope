@@ -85,7 +85,6 @@ hr { border-color: #E6E5E6; }
 .nav-list li {
     display: inline;
     margin-left: 30px;
-    margin-bottom: 0;
 }
 
 .nav-list li:first-child {
@@ -93,7 +92,6 @@ hr { border-color: #E6E5E6; }
 }
 
 .nav-list li a {
-    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #9099A3;
     text-transform: uppercase;
     text-decoration: none;
@@ -125,7 +123,7 @@ hr { border-color: #E6E5E6; }
     padding-bottom: 70px;
 }
 
-.section.lead {
+.section.no-padding-b {
     padding-bottom: 0;
 }
 
@@ -133,73 +131,79 @@ hr { border-color: #E6E5E6; }
     background-color: #F7F7F7;
 }
 
-.figure {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.video-list,
-.credits-list {
-    margin-top: 30px;
-}
-
-.video-wrapper,
-.crew-wrapper,
-.credit-wrapper {
-    margin-bottom: 50px;
-    color: #9099A3;
-}
-
-.video-wrapper h3,
-.crew-wrapper h3,
-.credit-wrapper h3 {
-    margin-top: 5px;
-    margin-bottom: 0;
-}
-
-.video-thumb {
-    -webkit-filter: grayscale(1) opacity(.8);
-    filter: grayscale(1) opacity(.8);
-}
-
-.video-thumb:hover {
-    cursor: pointer;
-}
-
-.video-wrapper:hover .video-thumb {
-    -webkit-filter: none;
-    filter: none;
-}
-
-.video-wrapper h3 a {
-    color: inherit;
-}
-
-.video-wrapper:hover h3 a {
-    color: #EF6649;
-}
-
-.video-wrapper .more {
-    visibility: hidden;
-    font-family: "Muli", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.video-wrapper:hover .more {
-    visibility: visible;
-}
-
 .quote {
     font-size: 2.0rem;
     font-style: italic;
 }
 
-.credit-list {
+.figure {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.item-set {
+    margin-top: 30px;
+}
+
+.item-set .row {
+    margin-bottom: 50px;
+}
+
+.item-set .row:last-child {
+    margin-bottom: 0;
+}
+
+.item-wrapper {
+    color: #9099A3;
+}
+
+.item-wrapper h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.item-wrapper ul {
     margin-top: 10px;
     list-style: none;
 }
 
-.credit-list li {
+.item-wrapper ul li {
     margin-bottom: 5px;
+}
+
+.item-wrapper.faded a {
+    color: inherit;
+}
+
+.item-wrapper.faded:hover a {
+    color: #EF6649;
+}
+
+.item-wrapper a:hover {
+    /*color: initial;  override back to browser color*/
+}
+
+.item-wrapper.faded img {
+    -webkit-filter: grayscale(1) opacity(.8);
+    filter: grayscale(1) opacity(.8);
+}
+
+.item-wrapper.faded:hover img {
+    -webkit-filter: none;
+    filter: none;
+}
+
+.item-wrapper .more {
+    visibility: hidden;
+    font-family: "Muli", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.item-wrapper:hover .more {
+    visibility: visible;
+}
+
+.video-thumb:hover {
+    cursor: pointer;
 }
 
 
