@@ -2,9 +2,10 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://vitascopearts.com" # the base hostname & protocol for your site
 blogurl: "http://vitascopearts.tumblr.com"
+permalink: /:category/:title
 
 title: Vitascope Arts
-description: > # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines
   Vitascrope Arts is a full service production company, from concept to
   final cut. We make videos and commercials for businesses with something
   to say.

@@ -45,7 +45,7 @@ hr { border-color: #E6E5E6; }
 }
 
 .btn-nav:hover {
-    border-color: #EF6649;
+
 }
 
 .container.narrow { max-width: 620px; }
@@ -83,11 +83,12 @@ hr { border-color: #E6E5E6; }
 }
 
 .nav-list li {
-    display: inline;
+    display: inline-block;
     margin-left: 30px;
 }
 
-.nav-list li:first-child {
+.nav-list li:first-child,
+.nav-list li:last-child {
     margin-left: 0;
 }
 
@@ -95,10 +96,13 @@ hr { border-color: #E6E5E6; }
     color: #9099A3;
     text-transform: uppercase;
     text-decoration: none;
+    -webkit-transition: color .2s, border-color .2s;
+    transition: color .2s, border-color .2s;
 }
 
 .nav-list li a:hover {
     color: #EF6649;
+    border-color: #EF6649;
 }
 
 /* when greater than 650 (between phablet and tablet) */
@@ -115,12 +119,25 @@ hr { border-color: #E6E5E6; }
 
 }
 
+/* when greater than 400 (phone) */
+@media (min-width: 400px) {
+
+    .nav-list li:last-child {
+        margin-left: 30px;
+    }
+
+}
+
 /** BODY **/
 
 .section {
     text-align: center;
     padding-top: 70px;
     padding-bottom: 70px;
+}
+
+.section.no-padding-t {
+    padding-top: 0;
 }
 
 .section.no-padding-b {
@@ -173,19 +190,25 @@ hr { border-color: #E6E5E6; }
 
 .item-wrapper.faded a {
     color: inherit;
+    -webkit-transition: color .2s;
+    transition: color .2s;
 }
 
 .item-wrapper.faded:hover a {
     color: #EF6649;
 }
 
-.item-wrapper a:hover {
-    /*color: initial;  override back to browser color*/
+.item-wrapper a:hover,
+.item-wrapper.faded a:hover {
+    color: #0FA0CE;
 }
 
 .item-wrapper.faded img {
     -webkit-filter: grayscale(1) opacity(.8);
     filter: grayscale(1) opacity(.8);
+
+    -webkit-transition: -webkit-filter .2s, filter .2s;
+    transition: -webkit-filter .2s, filter .2s;
 }
 
 .item-wrapper.faded:hover img {
@@ -194,8 +217,10 @@ hr { border-color: #E6E5E6; }
 }
 
 .item-wrapper .more {
-    visibility: hidden;
     font-family: "Muli", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    visibility: hidden;
+    -webkit-transition: visibility .2s;
+    transition: visibility .2s;
 }
 
 .item-wrapper:hover .more {

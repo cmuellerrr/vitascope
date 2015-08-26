@@ -17,29 +17,33 @@ title: Work
 
         <div class="item-set">
 
-            <div class="row">
-                <div class="four columns">
-                    <div class="item-wrapper faded">
-                        <img src="http://img.youtube.com/vi/v6rXL6L022A/hqdefault.jpg" rel="NFfTHoJ9khs" class="video-thumb u-max-full-width"/>
-                        <h3><a href="http://www.titaniumfalcon.com" target="_blank">Titanium Falcon</a></h3>
-                        <p>"Introducing: Talon" <br> <a class="more" href="{{ site.baseurl }}/projects/titanium-falcon.html">Details</a></p>
+            {% for post in site.posts %}
+                {% assign loopindex = forloop.index | modulo: 3 %}
+
+                {% if loopindex == 1 or forloop.first %}
+                    <div class="row">
+                {% endif %}
+
+                    {% if forloop.rindex == 2 and (loopindex == 1 or forloop.first) %}
+                        <div class="four columns offset-by-two">
+                    {% elsif forloop.rindex == 1 and (loopindex == 1 or forloop.first) %}
+                        <div class="four columns offset-by-four">
+                    {% else %}
+                        <div class="four columns">
+                    {% endif %}
+
+                            <div class="item-wrapper faded">
+                                <img src="http://img.youtube.com/vi/{{ post.video_id }}/hqdefault.jpg" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
+                                <h3><a href="{{ post.client_url }}" target="_blank">{{ post.client }}</a></h3>
+                                <p>"{{post.video_title}}" <br> <a class="more" href="{{ post.url }}">Details</a></p>
+                            </div>
+                        </div>
+
+                {% if loopindex == 0 or forloop.last %}
                     </div>
-                </div>
-                <div class="four columns">
-                    <div class="item-wrapper faded">
-                        <img src="http://img.youtube.com/vi/v6rXL6L022A/hqdefault.jpg" rel="NFfTHoJ9khs" class="video-thumb u-max-full-width"/>
-                        <h3><a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></h3>
-                        <p>"Drumbeats" <br> <a class="more" href="{{ site.baseurl }}/projects/simpliflow-sports.html">Details</a></p>
-                    </div>
-                </div>
-                <div class="four columns">
-                    <div class="item-wrapper faded">
-                        <img src="http://img.youtube.com/vi/v6rXL6L022A/hqdefault.jpg" rel="v6rXL6L022A" class="video-thumb u-max-full-width"/>
-                        <h3><a href="http://www.levi.com" target="_blank">Levi Strauss</a></h3>
-                        <p>"We are San Francisco" <br> <a class="more" href="{{ site.baseurl }}/projects/levi-strauss.html">Details</a></p>
-                    </div>
-                </div>
-            </div>
+                {% endif %}
+
+            {% endfor %}
 
         </div>
 
