@@ -3,91 +3,59 @@ layout: default
 title: We make commercials
 ---
 
-<div class="section no-padding-t">
-    <div class="container narrow">
+<div class="hero" id="hero">
 
-        <div class="image-wrapper">
-            <img src="images/marquee.png" alt="We make commercials" class="u-max-full-width">
-        </div>
-
-    </div>
 </div>
 
-<div class="section" id="intro">
-    <div class="container narrow">
-
-        <div class="container narrower">
-            <h1>We help businesses show off their next great product &mdash; in sweet, sweet video form.</h1>
-            <a href="{{ site.baseurl }}/about.html" class="btn">More about us</a>
-        </div>
-
-    </div>
+<div class="container narrower elevator" id="elevator">
+    <h1>We help businesses show off their products with attention-grabbing videos.</h1>
+    <h1>Like these.</h1>
 </div>
 
-<hr class="container narrow">
 
-<div class="section" id="work">
-    <div class="container narrow">
+<div class="container video-set">
 
-        <div class="container narrower">
-            <h2>But talk is cheap.</h2>
-            <p>We think that video speaks louder than words, so here's a little sampling of what we've made for our clients.</p>
-        </div>
+    {% for post in site.posts %}
+        {% assign loopindex = forloop.index | modulo: 3 %}
 
-        <div class="item-set">
+        {% if loopindex == 1 or forloop.first %}
+            <div class="row">
+        {% endif %}
 
-            {% for post in site.posts %}
-                {% assign loopindex = forloop.index | modulo: 3 %}
+            {% if forloop.rindex == 2 and (loopindex == 1 or forloop.first) %}
+                <div class="four columns offset-by-two">
+            {% elsif forloop.rindex == 1 and (loopindex == 1 or forloop.first) %}
+                <div class="four columns offset-by-four">
+            {% else %}
+                <div class="four columns">
+            {% endif %}
 
-                {% if loopindex == 1 or forloop.first %}
-                    <div class="row">
-                {% endif %}
-
-                    {% if forloop.rindex == 2 and (loopindex == 1 or forloop.first) %}
-                        <div class="four columns offset-by-two">
-                    {% elsif forloop.rindex == 1 and (loopindex == 1 or forloop.first) %}
-                        <div class="four columns offset-by-four">
-                    {% else %}
-                        <div class="four columns">
-                    {% endif %}
-
-                            <div class="item-wrapper faded">
-                                <img src="http://img.youtube.com/vi/{{ post.video_id }}/hqdefault.jpg" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
-                                <h3><a href="{{ post.client_url }}" target="_blank">{{ post.client }}</a></h3>
-                                <p>"{{post.video_title}}" <br> <a class="more" href="{{ post.url }}">Details</a></p>
-                            </div>
-                        </div>
-
-                {% if loopindex == 0 or forloop.last %}
+                    <div class="item-wrapper faded">
+                        <img src="http://img.youtube.com/vi/{{ post.video_id }}/hqdefault.jpg" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
+                        <h3><a href="{{ post.client_url }}" target="_blank">{{ post.client }}</a></h3>
+                        <p>"{{post.video_title}}" <br> <a class="more" href="{{ post.url }}">Details</a></p>
                     </div>
-                {% endif %}
+                </div>
 
-            {% endfor %}
+        {% if loopindex == 0 or forloop.last %}
+            </div>
+        {% endif %}
 
-        </div>
-
-    </div>
+    {% endfor %}
 </div>
 
-<hr class="container narrow">
+<div class="container recommendation">
 
-<div class="section">
     <div class="container narrow">
-
         <p class="quote">"Working with Cole and the Vitascope Arts team met and exceeded my original expectations. We are extremely pleased with our video..."</p>
-        <p class="attribution">John Doe <br> <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
-
+        <p class="attribution">John Doe, CEO <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
     </div>
+
 </div>
 
-<div class="section bg" id="contact">
-    <div class="container narrower">
+<div class="container narrower contact" id="contact">
 
         <h2>Let's work together!</h2>
         <p>Tell us a little about what you are looking for, when you want it, and your budget and we'll see what we can do. Just send an email to <a href="{{ site.mailto }}">{{ site.email }}</a>.</p>
-        <div class="image-wrapper">
-            <img src="images/teamwork.png" alt="A 'Hello' name tag" class="u-max-full-width">
-        </div>
 
-    </div>
 </div>

@@ -2,52 +2,25 @@ body {
     font-family: "Muli", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 300;
-    color: #4A4A4A;
+    color: #9099A3;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #4A4A4A;
 }
 
-h1 { font-size: 2.0rem; }
-h2 { font-size: 1.6rem; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
 h3 { font-size: 1.4rem; }
 h4 { font-size: 1.0rem; }
 
-p { color: #9099A3; }
-a { color: #EF6649; text-decoration: none; font-family: "Montserrat";}
+a { color: #EF6649; text-decoration: none; font-weight: 400;}
 
-hr { border-color: #E6E5E6; }
+hr { border-color: #D1DEEC; }
 
-.btn {
-    display: inline-block;
-
-    border-radius: 3px;
-    padding: 6px 20px;
-
-    background: #EF6649;
-    box-shadow: 0 3px 0 0 #C1533B;
-
-    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-.btn:hover {
-    color: white;
-}
-
-.btn-nav {
-    padding: 6px 10px;
-    border: 2px solid #9099A3;
-    border-radius: 3px;
-}
-
-.btn-nav:hover {
-
-}
-
+.container { max-width: 960px; }
 .container.narrow { max-width: 620px; }
 .container.narrower { max-width: 460px; }
 
@@ -56,7 +29,7 @@ hr { border-color: #E6E5E6; }
     margin: auto;
 }
 
-.left-align {
+.txt-left {
     text-align: left;
 }
 
@@ -64,31 +37,45 @@ hr { border-color: #E6E5E6; }
 
 .site-header {
     width: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #D1DEEC;
+    text-align: center;
+    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.site-header .container > * {
+    vertical-align: middle
+}
+
+.logo-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 15px;
 }
 
 .logo {
-    width: 110px;
+    width: 50px;
+    height: 50px;
 }
 
-.nav-wrapper {
-    padding-top: 20px;
-    text-align: center;
+.nav-wrapper.full {
+    display: none;
 }
 
 .nav-list {
+    margin-bottom: 0;
     list-style: none;
     font-size: 1.2rem;
 }
 
 .nav-list li {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 50px;
+    margin-bottom: 0;
 }
 
-.nav-list li:first-child,
-.nav-list li:last-child {
+.nav-list li:first-child {
     margin-left: 0;
 }
 
@@ -102,33 +89,57 @@ hr { border-color: #E6E5E6; }
 
 .nav-list li a:hover {
     color: #EF6649;
-    border-color: #EF6649;
 }
 
-/* when greater than 650 (between phablet and tablet) */
-@media (min-width: 650px) {
+/* when greater than 685 (where the nav breaks the line) */
+@media (min-width: 685px) {
 
     .logo-wrapper {
-        float: left;
+        display: inline-block;
+        margin-bottom: 0;
     }
 
-    .nav-wrapper {
-        float: right;
-        text-align: inherit;
+    .nav-wrapper.full {
+        display: inline-block;
     }
 
-}
-
-/* when greater than 400 (phone) */
-@media (min-width: 400px) {
-
-    .nav-list li:last-child {
-        margin-left: 30px;
+    .nav-wrapper.mobile {
+        display: none;
     }
-
 }
 
 /** BODY **/
+
+.hero {
+    height: 400px;
+    background: #F7F7F7;
+}
+
+.elevator {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.recommendation {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #D1DEEC;
+    text-align: center;
+}
+
+.quote {
+    font-size: 2.0rem;
+    font-style: italic;
+    color: #4A4A4A;
+}
+
+.contact {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    text-align: center;
+}
 
 .section {
     text-align: center;
@@ -148,10 +159,7 @@ hr { border-color: #E6E5E6; }
     background-color: #F7F7F7;
 }
 
-.quote {
-    font-size: 2.0rem;
-    font-style: italic;
-}
+
 
 .figure {
     padding-top: 10px;
@@ -236,68 +244,49 @@ hr { border-color: #E6E5E6; }
 /** FOOTER **/
 
 .site-footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid #D1DEEC;
     font-size: 1.0rem;
-    margin-top: 100px;
 }
 
-.bigfooter {
-    width: 100%;
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-
-.feet-wrapper {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.foot {
+.copyright-wrapper,
+.contact-wrapper {
     display: inline-block;
-    margin-left: 80px;
-    vertical-align: top;
-    text-align: left;
 }
 
-.foot:first-child {
-    margin-left: 0;
+.contact-wrapper {
+    float: right;
 }
 
-.foot-title {
-    text-transform: uppercase;
-}
-
-.foot-list {
+.contact-list {
     margin-bottom: 0;
     list-style: none;
 }
 
-.foot-list li {
-    margin-bottom: 5px;
+.contact-list li {
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 0;
 }
 
-.foot-list li a {
-    font-family: inherit;
+.contact-list li:first-child {
+    margin-left: 0;
+}
+
+.contact-list li a {
     color: inherit;
 }
 
-.littlefooter {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #E6E5E6;
-}
-
-.copyright {
+.copyright-wrapper p {
     margin: 0;
 }
 
-/* when greater than 650 (between phablet and tablet) */
-@media (min-width: 650px) {
+/* when greater than 450 (where footer gets too tight) */
+@media (min-width: 450px) {
 
-    .feet-wrapper {
-        float: right;
-        margin-top: 0;
-        text-align: inherit;
+    .contact-list li {
+        margin-left: 30px;
     }
 
 }
