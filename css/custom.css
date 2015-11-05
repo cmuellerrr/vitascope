@@ -6,7 +6,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    text-align: center;
     font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #4A4A4A;
 }
@@ -17,6 +16,8 @@ h3 { font-size: 1.4rem; }
 h4 { font-size: 1.0rem; }
 
 a { color: #EF6649; text-decoration: none; font-weight: 400;}
+a.secondary { color: #9099A3; }
+a.secondary:hover { text-decoration: underline; }
 
 hr { border-color: #D1DEEC; }
 
@@ -73,6 +74,7 @@ hr { border-color: #D1DEEC; }
     display: inline-block;
     margin-left: 50px;
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 .nav-list li:first-child {
@@ -81,10 +83,8 @@ hr { border-color: #D1DEEC; }
 
 .nav-list li a {
     color: #9099A3;
-    text-transform: uppercase;
-    text-decoration: none;
-    -webkit-transition: color .2s, border-color .2s;
-    transition: color .2s, border-color .2s;
+    -webkit-transition: color .2s;
+    transition: color .2s;
 }
 
 .nav-list li a:hover {
@@ -115,17 +115,22 @@ hr { border-color: #D1DEEC; }
     background: #F7F7F7;
 }
 
-.elevator {
-    margin-top: 50px;
+.page-header {
+    margin-top: 100px;
     margin-bottom: 50px;
+    text-align: center;
 }
 
+.detail,
 .recommendation {
     padding-top: 70px;
     padding-bottom: 70px;
     border-top: 1px solid;
     border-bottom: 1px solid;
     border-color: #D1DEEC;
+}
+
+.recommendation {
     text-align: center;
 }
 
@@ -133,6 +138,10 @@ hr { border-color: #D1DEEC; }
     font-size: 2.0rem;
     font-style: italic;
     color: #4A4A4A;
+}
+
+.attribution {
+    margin-bottom: 0;
 }
 
 .contact {
@@ -149,11 +158,6 @@ hr { border-color: #D1DEEC; }
     border-top: 3px solid;
 }
 
-.project-wrapper h3,
-.project-wrapper a {
-    color: #9099A3;
-}
-
 .project-client {
     margin-bottom: 5px;
 }
@@ -161,6 +165,15 @@ hr { border-color: #D1DEEC; }
 .project-title {
     height: 45px;
     margin-bottom: 5px;
+}
+
+.project-link {
+    margin-bottom: 0;
+    font-size: 1.0rem;
+}
+
+.project-link a {
+    color: #9099A3;
 }
 
 .video-thumb {
@@ -172,9 +185,8 @@ hr { border-color: #D1DEEC; }
     cursor: pointer;
 }
 
-.project-link {
-    margin-bottom: 0;
-    font-size: 1.0rem;
+.detail iframe {
+    margin-bottom: 2.5rem;
 }
 
 
@@ -274,7 +286,7 @@ hr { border-color: #D1DEEC; }
 
 .post-wrapper {
     margin-bottom: 70px;
-    border-bottom: 3px solid #E6E5E6;
+    border-bottom: 3px solid #D1DEEC;
 }
 
 .post-wrapper h1 {

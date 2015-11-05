@@ -3,61 +3,51 @@ layout: default
 title: Work
 ---
 
-<div class="section no-padding-b">
-    <div class="container narrower">
+<div class="container narrower page-header">
 
-        <h1>Our work</h1>
-        <p>Here's the full list of what we've made for companies big and small. Additional reel material available on request.</p>
+    <h1>Our work</h1>
 
-    </div>
 </div>
 
-<div class="section" id="all-work">
-    <div class="container narrow">
 
-        <div class="item-set">
+<div class="container project-set">
 
-            {% for post in site.posts %}
-                {% assign loopindex = forloop.index | modulo: 3 %}
+    {% for post in site.posts %}
+        {% assign loopindex = forloop.index | modulo: 3 %}
 
-                {% if loopindex == 1 or forloop.first %}
-                    <div class="row">
-                {% endif %}
+        {% if loopindex == 1 or forloop.first %}
+            <div class="row">
+        {% endif %}
 
-                    {% if forloop.rindex == 2 and (loopindex == 1 or forloop.first) %}
-                        <div class="four columns offset-by-two">
-                    {% elsif forloop.rindex == 1 and (loopindex == 1 or forloop.first) %}
-                        <div class="four columns offset-by-four">
-                    {% else %}
-                        <div class="four columns">
-                    {% endif %}
+            {% if forloop.rindex == 2 and (loopindex == 1 or forloop.first) %}
+                <div class="one-third column offset-by-two">
+            {% elsif forloop.rindex == 1 and (loopindex == 1 or forloop.first) %}
+                <div class="one-third column offset-by-four">
+            {% else %}
+                <div class="one-third column">
+            {% endif %}
 
-                            <div class="item-wrapper faded">
-                                <img src="http://img.youtube.com/vi/{{ post.video_id }}/hqdefault.jpg" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
-                                <h3><a href="{{ post.client_url }}" target="_blank">{{ post.client }}</a></h3>
-                                <p>"{{post.video_title}}" <br> <a class="more" href="{{ post.url }}">Details</a></p>
-                            </div>
-                        </div>
-
-                {% if loopindex == 0 or forloop.last %}
+                    <div class="project-wrapper" style="border-top-color: #{{ post.client_color }}">
+                        <h3 class="project-client txt-left">{{ post.client }}</h3>
+                        <p class="project-title">"{{post.video_title}}"</p>
+                        <img src="{{ post.video_thumb }}" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
+                        <p class="project-link"><a class="secondary" href="{{ post.url }}">More Info</a></p>
                     </div>
-                {% endif %}
 
-            {% endfor %}
+                </div>
 
-        </div>
+        {% if loopindex == 0 or forloop.last %}
+            </div>
+        {% endif %}
 
-    </div>
+    {% endfor %}
+
 </div>
 
-<hr class="container narrow">
 
-<div class="section" id="contact">
-    <div class="container narrower">
+<div class="container narrower contact" id="contact">
 
         <h2>Need a video?</h2>
-        <p>We'd love to make you one. So drop us a line and let's get started. Just send an email to <a href="{{ site.mailto }}">{{ site.email }}</a>.</p>
+        <p>Tell us a little about what you are looking for, when you want it, and your budget and we'll see what we can do. Just send an email to <a href="{{ site.mailto }}">{{ site.email }}</a>.</p>
 
-    </div>
 </div>
-

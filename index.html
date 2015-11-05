@@ -7,9 +7,11 @@ title: We make commercials
 
 </div>
 
-<div class="container narrower elevator" id="elevator">
+<div class="container narrower page-header" id="elevator">
+
     <h1>We help businesses show off their products with attention-grabbing videos.</h1>
     <h1>Like these.</h1>
+
 </div>
 
 
@@ -30,11 +32,11 @@ title: We make commercials
                 <div class="one-third column">
             {% endif %}
 
-                    <div class="project-wrapper" style="border-top-color:{{ post.color }}">
-                        <h3 class="project-client txt-left">{{ post.client }}</h3>
+                    <div class="project-wrapper" style="border-top-color: #{{ post.client_color }}">
+                        <h3 class="project-client">{{ post.client }}</h3>
                         <p class="project-title">"{{post.video_title}}"</p>
-                        <img src="{{ site.baseurl }}/images/test.png" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
-                        <p class="project-link"><a href="{{ post.url }}">More Info</a></p>
+                        <img src="{{ post.video_thumb }}" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
+                        <p class="project-link"><a class="secondary" href="{{ post.url }}">More Info</a></p>
                     </div>
 
                 </div>

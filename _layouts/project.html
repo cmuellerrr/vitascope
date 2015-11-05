@@ -2,33 +2,21 @@
 layout: default
 ---
 
-<div class="section no-padding-b">
-    <div class="container narrower">
-
-        <h1>{{ page.client }}</h1>
-        <h2>"{{ page.video_title }}"</h2>
-
-    </div>
+<div class="container narrow page-header">
+    <h1>{{ page.client }} &mdash; {{ page.video_title }}</h1>
 </div>
 
-<div class="section">
-    <div class="container narrower">
+<div class="container narrow detail">
 
-        <img src="http://img.youtube.com/vi/{{ page.video_id }}/hqdefault.jpg" rel="{{ page.video_id }}" class="video-thumb u-max-full-width"/>
-        <div class="item-set">
-            {{ content }}
-        </div>
+    <iframe src="https://player.vimeo.com/video/{{ page.video_id }}?title=0&byline=0&portrait=0" class="u-max-full-width" width="620" height="348" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-    </div>
+   {{ content }}
+
 </div>
 
-<hr class="container narrow">
-
-<div class="section" id="contact">
-    <div class="container narrower">
+<div class="container narrower contact" id="contact">
 
         <h2>Need a video?</h2>
         <p>We'd love to make you one. So drop us a line and let's get started. Just send an email to <a href="{{ site.mailto }}">{{ site.email }}</a>.</p>
 
-    </div>
 </div>
