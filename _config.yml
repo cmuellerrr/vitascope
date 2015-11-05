@@ -2,7 +2,7 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://vitascopearts.com" # the base hostname & protocol for your site
 blogurl: "http://vitascopearts.tumblr.com"
-permalink: /:category/:title
+permalink: /:categories/:title
 
 title: Vitascope Arts
 description: > # this means to ignore newlines
