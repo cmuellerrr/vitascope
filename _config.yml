@@ -1,5 +1,5 @@
 # Site settings
-baseurl: "/vitascope/" # the subpath of your site, e.g. /blog/
+baseurl: "/vitascope" # the subpath of your site, e.g. /blog/
 url: "http://vitascopearts.com" # the base hostname & protocol for your site
 blogurl: "http://vitascopearts.tumblr.com"
 permalink: /:categories/:title
