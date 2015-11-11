@@ -1,10 +1,21 @@
 ---
 layout: default
 title: We make commercials
+class: home
 ---
 
 <div class="hero" id="hero">
-
+    <div class="hero-text">
+        <div class="container narrow">
+            <h1>We make commercials</h1>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <div class="container narrow">
+            <p>Scroll down to learn more about us</p>
+            <svg class="arrow"><path class="a1" d="M0 0 L10 10 L20 0"></path></svg>
+        </div>
+    </div>
 </div>
 
 <div class="container narrower page-header" id="elevator">
@@ -45,18 +56,31 @@ title: We make commercials
             </div>
         {% endif %}
 
+        {% if forloop.index == 6 %}
+            <div class="recommendation">
+
+                <div class="container narrow">
+                    <p class="quote">"Working with Cole and the Vitascope Arts team met and exceeded my original expectations. We are extremely pleased with our video..."</p>
+                    <p class="attribution">Hunter Hogarth, <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
+                </div>
+
+            </div>
+        {% elsif forloop.index == 12 %}
+            <div class="recommendation">
+
+                <div class="container narrow">
+                    <p class="quote">"Working with Cole and the Vitascope Arts team met and exceeded my original expectations. We are extremely pleased with our video..."</p>
+                    <p class="attribution">Hunter Hogarth, <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
+                </div>
+
+            </div>
+        {% endif %}
+
     {% endfor %}
 
 </div>
 
-<div class="container recommendation">
 
-    <div class="container narrow">
-        <p class="quote">"Working with Cole and the Vitascope Arts team met and exceeded my original expectations. We are extremely pleased with our video..."</p>
-        <p class="attribution">John Doe, CEO <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
-    </div>
-
-</div>
 
 <div class="container narrower contact" id="contact">
 

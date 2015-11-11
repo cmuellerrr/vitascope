@@ -21,7 +21,7 @@ a.secondary:hover { text-decoration: underline; }
 
 hr { border-color: #D1DEEC; }
 
-.container { max-width: 960px; }
+.container { max-width: 900px; }
 .container.narrow { max-width: 620px; }
 .container.narrower { max-width: 460px; }
 
@@ -56,8 +56,13 @@ hr { border-color: #D1DEEC; }
 }
 
 .logo {
+    display: inline-block;
     width: 50px;
     height: 50px;
+    background-repeat: no-repeat;
+    background-image: url('../images/logo.png');
+    background-size: 50px 50px;
+    background-position: center center;
 }
 
 .nav-wrapper.full {
@@ -108,12 +113,90 @@ hr { border-color: #D1DEEC; }
     }
 }
 
-/** BODY **/
+/** HOME PAGE **/
+
+.home .site-header {
+    position: absolute;
+    z-index: 200;
+    border-bottom: none;
+}
+
+.home .logo {
+    background-image: url('../images/logo-white.png');
+}
+
+.home .nav-list li a {
+    color: #FFFFFF;
+}
+
+/** HERO IMAGE **/
 
 .hero {
-    height: 400px;
-    background: #F7F7F7;
+    position: relative;
+    height: 100%;
+    height: 100vh;
+    min-height: 550px;
+    width: 100%;
+    z-index: 100;
+    background-color: #48BEFF;
+    background-image: url('../images/hero-bg.png');
 }
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+
+    -ms-transform: translate(0, -50%); /* IE 9 */
+    -webkit-transform: translate(0, -50%); /* Safari */
+    transform: translate(0, -50%);
+}
+
+.hero-text h1 {
+    margin-bottom: 80px;
+    font-size: 38px;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.hero-scroll p {
+    margin-bottom: 10px;
+}
+
+.arrow {
+    width: 20px;
+    height: 15px;
+}
+
+.arrow path {
+    stroke: #FFFFFF;
+    fill: transparent;
+    stroke-width: 3px;
+}
+
+/* when greater than 685 (where the nav breaks the line) */
+@media (min-width: 685px) {
+
+    .hero {
+        background-position: center center;
+    }
+
+    .hero-text h1 {
+        font-size: 68px;
+    }
+}
+
+/** BODY **/
 
 .page-header {
     margin-top: 100px;
