@@ -15,7 +15,7 @@ title: Our Work
             <h3 class="project-client">{{ post.client }}</h3>
             <p class="project-title">"{{post.video_title}}"</p>
             <img src="https://i.vimeocdn.com/video/{{ post.thumb_id }}_442x249.webp" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
-            <p class="project-link"><a class="secondary" href="{{ post.url }}">More Info</a></p>
+            <p class="project-link"><a class="secondary" href="{{ site.baseurl }}{{ post.url }}">More Info</a></p>
         </div>
 
     {% endfor %}
