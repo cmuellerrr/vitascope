@@ -168,7 +168,7 @@ a.secondary:hover { text-decoration: underline; }
 
 .hero-scroll {
     position: absolute;
-    bottom: 50px;
+    bottom: 80px;
     width: 100%;
     text-align: center;
     color: #FFFFFF;
