@@ -12,74 +12,46 @@ class: home
     </div>
     <div class="hero-scroll">
         <div class="container narrow">
-            <p>Scroll down to learn more about us</p>
+            <p>Scroll down to see more of what we do</p>
             <svg class="arrow"><path class="a1" d="M0 0 L10 10 L20 0"></path></svg>
         </div>
     </div>
 </div>
 
-<div class="container narrower page-header" id="elevator">
+<div class="container narrower elevator" id="elevator">
 
     <h1>We help businesses show off their products with attention-grabbing videos.</h1>
     <h1>Like these.</h1>
 
 </div>
 
-
 <div class="container project-set">
 
     {% for post in site.posts %}
-        {% assign loopindex = forloop.index | modulo: 3 %}
 
-        {% if loopindex == 1 or forloop.first %}
-            <div class="row">
-        {% endif %}
+        <div class="project-wrapper" style="border-top-color: #{{ post.client_color }}">
+            <h3 class="project-client">{{ post.client }}</h3>
+            <p class="project-title">"{{post.video_title}}"</p>
+            <img src="https://i.vimeocdn.com/video/{{ post.thumb_id }}_442x249.webp" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
+            <p class="project-link"><a class="secondary" href="{{ post.url }}">More Info</a></p>
+        </div>
 
-            {% if forloop.rindex == 2 and (loopindex == 1 or forloop.first) %}
-                <div class="one-third column offset-by-two">
-            {% elsif forloop.rindex == 1 and (loopindex == 1 or forloop.first) %}
-                <div class="one-third column offset-by-four">
-            {% else %}
-                <div class="one-third column">
-            {% endif %}
+        {% if forloop.index == 6 %}
+            </div>
+                <div class="recommendation">
 
-                    <div class="project-wrapper" style="border-top-color: #{{ post.client_color }}">
-                        <h3 class="project-client">{{ post.client }}</h3>
-                        <p class="project-title">"{{post.video_title}}"</p>
-                        <img src="{{ post.video_thumb }}" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
-                        <p class="project-link"><a class="secondary" href="{{ post.url }}">More Info</a></p>
+                    <div class="container narrow">
+                        <p class="quote">"Working with Cole and the Vitascope Arts team met and exceeded my original expectations. We are extremely pleased with our video..."</p>
+                        <p class="attribution">Hunter Hogarth, <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
                     </div>
 
                 </div>
-
-        {% if loopindex == 0 or forloop.last %}
-            </div>
-        {% endif %}
-
-        {% if forloop.index == 6 %}
-            <div class="recommendation">
-
-                <div class="container narrow">
-                    <p class="quote">"Working with Cole and the Vitascope Arts team met and exceeded my original expectations. We are extremely pleased with our video..."</p>
-                    <p class="attribution">Hunter Hogarth, <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
-                </div>
-
-            </div>
-        {% elsif forloop.index == 12 %}
-            <div class="recommendation">
-
-                <div class="container narrow">
-                    <p class="quote">"Working with Cole and the Vitascope Arts team met and exceeded my original expectations. We are extremely pleased with our video..."</p>
-                    <p class="attribution">Hunter Hogarth, <a href="http://www.simpliflow.com" target="_blank">Simpliflow Sports</a></p>
-                </div>
-
-            </div>
+            <div class="container project-set">
         {% endif %}
 
     {% endfor %}
 
 </div>
-
 
 
 <div class="container narrower contact" id="contact">

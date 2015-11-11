@@ -10,32 +10,13 @@ title: Our Work
 <div class="container project-set">
 
     {% for post in site.posts %}
-        {% assign loopindex = forloop.index | modulo: 3 %}
 
-        {% if loopindex == 1 or forloop.first %}
-            <div class="row">
-        {% endif %}
-
-            {% if forloop.rindex == 2 and (loopindex == 1 or forloop.first) %}
-                <div class="one-third column offset-by-two">
-            {% elsif forloop.rindex == 1 and (loopindex == 1 or forloop.first) %}
-                <div class="one-third column offset-by-four">
-            {% else %}
-                <div class="one-third column">
-            {% endif %}
-
-                    <div class="project-wrapper" style="border-top-color: #{{ post.client_color }}">
-                        <h3 class="project-client txt-left">{{ post.client }}</h3>
-                        <p class="project-title">"{{post.video_title}}"</p>
-                        <img src="{{ post.video_thumb }}" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
-                        <p class="project-link"><a class="secondary" href="{{ post.url }}">More Info</a></p>
-                    </div>
-
-                </div>
-
-        {% if loopindex == 0 or forloop.last %}
-            </div>
-        {% endif %}
+        <div class="project-wrapper" style="border-top-color: #{{ post.client_color }}">
+            <h3 class="project-client">{{ post.client }}</h3>
+            <p class="project-title">"{{post.video_title}}"</p>
+            <img src="https://i.vimeocdn.com/video/{{ post.thumb_id }}_442x249.webp" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
+            <p class="project-link"><a class="secondary" href="{{ post.url }}">More Info</a></p>
+        </div>
 
     {% endfor %}
 
