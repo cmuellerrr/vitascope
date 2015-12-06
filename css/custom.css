@@ -99,8 +99,8 @@ a.secondary:hover { text-decoration: underline; }
     color: #222222;
 }
 
-/* when greater than 685 (where the nav breaks the line) */
-@media (min-width: 685px) {
+/* when greater than 700 (where the nav breaks the line) */
+@media (min-width: 700px) {
 
     .logo-wrapper {
         display: inline-block;
@@ -115,9 +115,14 @@ a.secondary:hover { text-decoration: underline; }
         display: none;
     }
 
+    .site-header .container {
+        padding-left: 10px;
+    }
+
     .nav-list li {
         margin-left: 50px;
     }
+
 }
 
 /** HOME PAGE **/
@@ -136,20 +141,27 @@ a.secondary:hover { text-decoration: underline; }
     color: #FFFFFF;
 }
 
-.hero {
+.welcome {
     position: relative;
-    height: 100%;
-    height: 100vh;
+    height: 95%;
+    height: 95vh;
     min-height: 550px;
     width: 100%;
     z-index: 100;
     background-color: #48BEFF;
-    background-image: url('../images/hero-bg.png');
+    background-image: url('../images/bg.png');
+    background-position: bottom center;
 }
 
-.hero-text {
+.welcome-bottom {
+    height: 96px;
+    background-image: url('../images/bg-bottom.png');
+    background-position: top center;
+}
+
+.welcome-text {
     position: absolute;
-    top: 50%;
+    top: 52.5%;
     width: 100%;
     text-align: center;
     color: #FFFFFF;
@@ -159,22 +171,22 @@ a.secondary:hover { text-decoration: underline; }
     transform: translate(0, -50%);
 }
 
-.hero-text h1 {
+.welcome-text h1 {
     margin-bottom: 80px;
     font-size: 38px;
     text-transform: uppercase;
     color: inherit;
 }
 
-.hero-scroll {
+.welcome-scroll {
     position: absolute;
-    bottom: 80px;
+    bottom: 50px;
     width: 100%;
     text-align: center;
     color: #FFFFFF;
 }
 
-.hero-scroll p {
+.welcome-scroll p {
     margin-bottom: 10px;
 }
 
@@ -195,14 +207,18 @@ a.secondary:hover { text-decoration: underline; }
     text-align: center;
 }
 
-/* when greater than 685 (where the nav breaks the line) */
-@media (min-width: 685px) {
+/* when greater than 500 */
+@media (min-width: 500px) {
 
-    .hero {
-        background-position: center center;
+    .welcome-text h1 {
+        font-size: 48px;
     }
+}
 
-    .hero-text h1 {
+/* when greater than 700 (where the nav breaks the line) */
+@media (min-width: 700px) {
+
+    .welcome-text h1 {
         font-size: 68px;
     }
 }
@@ -292,14 +308,11 @@ a.secondary:hover { text-decoration: underline; }
 
 }
 
-.project-client {
+.project-client,
+.project-title {
     margin-bottom: 5px;
 }
 
-.project-title {
-    height: 45px;
-    margin-bottom: 5px;
-}
 
 .project-link {
     margin-bottom: 0;
