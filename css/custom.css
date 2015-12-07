@@ -143,8 +143,8 @@ a.secondary:hover { text-decoration: underline; }
 
 .welcome {
     position: relative;
-    height: 95%;
-    height: 95vh;
+    height: 85%;
+    height: 85vh;
     min-height: 550px;
     width: 100%;
     z-index: 100;
@@ -154,14 +154,14 @@ a.secondary:hover { text-decoration: underline; }
 }
 
 .welcome-bottom {
-    height: 96px;
+    height: 192px;
     background-image: url('../images/bg-bottom.png');
     background-position: top center;
 }
 
 .welcome-text {
     position: absolute;
-    top: 52.5%;
+    top: 55%;
     width: 100%;
     text-align: center;
     color: #FFFFFF;
@@ -180,7 +180,7 @@ a.secondary:hover { text-decoration: underline; }
 
 .welcome-scroll {
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
     width: 100%;
     text-align: center;
     color: #FFFFFF;
@@ -202,8 +202,8 @@ a.secondary:hover { text-decoration: underline; }
 }
 
 .elevator {
-    margin-top: 150px;
-    margin-bottom: 100px;
+    margin-top: 130px;
+    margin-bottom: 80px;
     text-align: center;
 }
 
