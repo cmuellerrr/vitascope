@@ -12,7 +12,9 @@ title: Our Work
     {% for post in site.posts %}
 
         <div class="project-wrapper">
-            <img src="{{ site.baseurl}}/images/thumbnails/{{ post.video_thumb }}" rel="{{ post.video_id }}" class="video-thumb u-max-full-width"/>
+            <div class="project-thumb" rel="{{ post.video_id }}" >
+                <img src="{{ site.baseurl}}/images/thumbnails/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
+            </div>
             <div class="project-details" style="border-color: #{{ post.client_color }}">
                 <!--<div class="project-logo-wrapper" style="background-color: #{{ post.client_color }}"></div>
                 <div class="project-text">-->
