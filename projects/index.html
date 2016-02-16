@@ -1,37 +1,82 @@
 ---
 layout: default
 title: Our Work
+class: projects
 ---
 
-<div class="container narrower page-header">
-</div>
 
+<div class="page-body">
+    <div class="content-wrapper">
 
-<div class="container project-set">
+        <div class="item-set clearfix">
+        {% for post in site.posts %}
 
-    {% for post in site.posts %}
-
-        <div class="project-wrapper">
-            <div class="project-thumb" rel="{{ post.video_id }}" >
-                <img src="{{ site.baseurl}}/images/thumbnails/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
-            </div>
-            <div class="project-details" style="border-color: #{{ post.client_color }}">
-                <!--<div class="project-logo-wrapper" style="background-color: #{{ post.client_color }}"></div>
-                <div class="project-text">-->
+            <div class="item-wrapper project">
+                <div class="project-thumb" rel="{{ post.video_id }}" >
+                    <img src="{{ site.baseurl}}/images/thumbnails/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
+                </div>
+                <div class="project-details">
                     <h3>{{ post.client }}</h3>
                     <p><a class="secondary" href="{{ site.baseurl }}{{ post.url }}">"{{post.video_title}}"</a></p>
-                <!--</div>-->
+                </div>
             </div>
+
+            <!-- insert recommendations -->
+            {% if forloop.index == 4 %}
+            <div class="item-wrapper quote">
+                <div class="quote-stretch">
+                    <div class="quote-inner">
+                        <p class="quote-text">"These guys set the bar really high."</p>
+                        <p class="quote-attribution">The Crowdfund Mafia</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if forloop.index == 8 %}
+            <div class="item-wrapper quote">
+                <div class="quote-stretch">
+                    <div class="quote-inner">
+                        <p class="quote-text">"The team met and exceeded my original expectations."</p>
+                        <p class="quote-attribution">Simpliflow Sports</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if forloop.index == 10 %}
+            <div class="item-wrapper quote">
+                <div class="quote-stretch">
+                    <div class="quote-inner">
+                        <p class="quote-text">"These guys set the bar really high."</p>
+                        <p class="quote-attribution">The Crowdfund Mafia</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if forloop.index == 14 %}
+            <div class="item-wrapper quote">
+                <div class="quote-stretch">
+                    <div class="quote-inner">
+                        <p class="quote-text">"The team met and exceeded my original expectations."</p>
+                        <p class="quote-attribution">Simpliflow Sports</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        {% endfor %}
         </div>
 
-    {% endfor %}
-
+    <div>
 </div>
 
+<div class="page-footer">
+    <div class="content-wrapper">
 
-<div class="container narrower contact" id="contact">
+        <h1>Like what you see?</h1>
+        <p>Let's work together! Tell us a little about what you are looking for, when you want it, and your budget and we'll see what we can do. Just send an email to <a href="{{ site.mailto }}">{{ site.email }}</a>.</p>
 
-        <h2>Need a video?</h2>
-        <p>Tell us a little about what you are looking for, when you want it, and your budget and we'll see what we can do. Just send an email to <a href="{{ site.mailto }}">{{ site.email }}</a>.</p>
-
+    </div>
 </div>
