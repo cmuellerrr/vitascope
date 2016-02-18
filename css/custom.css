@@ -174,7 +174,8 @@ a.secondary:hover { text-decoration: underline; }
     vertical-align: middle;
 }
 
-.welcome-logo {
+.welcome-logo img {
+    width: 100px;
     margin-right: 60px;
 }
 
