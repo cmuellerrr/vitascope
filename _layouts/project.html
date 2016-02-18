@@ -16,7 +16,9 @@ class: project
     <div class="content-wrapper tight">
 
         <div class="body-text">
-            <iframe src="https://player.vimeo.com/video/{{ page.video_id }}?title=0&byline=0&portrait=0" class="u-max-full-width" width="620" height="348" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div class="video-wrapper">
+                <iframe src="https://player.vimeo.com/video/{{ page.video_id }}?title=0&byline=0&portrait=0" class="u-max-full-width" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
 
             {{ content }}
         </div>

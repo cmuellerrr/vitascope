@@ -38,13 +38,25 @@
   <!--<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />-->
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $(".project-thumb").YouTubePopup({
         hideTitleBar: true,
         width: 853,
         height: 480,
         showBorder: false
       });
+
+      var resizeQuotes = function () {
+        if (window.innerWidth > 550) {
+          $('.quote').css('height', $('.project').css('height'));
+        }
+        else {
+          $('.quote').css('height', 'auto');
+        }
+      };
+
+      resizeQuotes();
+      window.onresize = resizeQuotes;
     });
   </script>
 
