@@ -2,30 +2,19 @@
 <header class="site-header clearfix">
     <div class="content-wrapper">
 
-        <nav class="nav-wrapper full">
-            <ul class="nav-list">
-                <li><a href="{{ site.baseurl }}/projects">Our Work</a></li>
-                <li><a href="{{ site.blogurl }}">Our Blog</a></li>
-            </ul>
-        </nav>
+        <nav class="nav-wrapper">
+            <div class="nav-logo"><a href="{{ site.baseurl }}/"></a></div>
 
-        <div class="logo-wrapper">
-            <a class="logo" href="{{ site.baseurl }}/"></a>
-        </div>
-
-        <nav class="nav-wrapper full">
             <ul class="nav-list">
-                <li><a href="{{ site.baseurl }}/about">About Us</a></li>
-                <li><a href="{{ site.mailto }}">Contact Us</a></li>
-            </ul>
-        </nav>
+                <li class="full" ><a href="{{ site.baseurl }}/projects">Our Work</a></li>
+                <li class="full" ><a href="{{ site.baseurl }}/about">About Us</a></li>
+                <li class="full" ><a href="{{ site.blogurl }}">The V.A. Blog</a></li>
 
-        <nav class="nav-wrapper mobile">
-            <ul class="nav-list">
-                <li><a href="{{ site.baseurl }}/projects">Work</a></li>
-                <li><a href="{{ site.blogurl }}">Blog</a></li>
-                <li><a href="{{ site.baseurl }}/about">About</a></li>
-                <li><a href="{{ site.mailto }}">Contact</a></li>
+                <li class="mobile" ><a href="{{ site.baseurl }}/projects">Work</a></li>
+                <li class="mobile" ><a href="{{ site.baseurl }}/about">About</a></li>
+                <li class="mobile" ><a href="{{ site.blogurl }}">Blog</a></li>
+
+                <li><a class="btn" href="{{ site.mailto }}">Contact</a></li>
             </ul>
         </nav>
 

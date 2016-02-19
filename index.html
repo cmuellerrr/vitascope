@@ -9,7 +9,7 @@ class: home
     <div class="content-wrapper">
 
         <div class="welcome-logo">
-            <img src="{{ site.baseurl }}/images/logo-128.png" alt="Vitascope Arts">
+            <img src="{{ site.baseurl }}/images/logo.png" alt="Vitascope Arts">
         </div>
 
         <div class="welcome-text">
@@ -81,3 +81,23 @@ class: home
 
     </div>
 </div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $window = $(window);
+        $window.scroll(function() {
+            $scroll_position = $window.scrollTop();
+
+            if ($scroll_position > 500) {
+                $('.site-header').addClass('sticky');
+            }
+            else {
+                $('.site-header').removeClass('sticky');
+            }
+        });
+
+        $window.scroll();
+     });
+
+</script>

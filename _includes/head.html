@@ -37,38 +37,4 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <!--<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />-->
 
-  <script>
-    $(document).ready(function () {
-      $(".project-thumb").YouTubePopup({
-        hideTitleBar: true,
-        width: 853,
-        height: 480,
-        showBorder: false
-      });
-
-      var resizeQuotes = function () {
-        if (window.innerWidth > 550) {
-          $('.quote').css('height', $('.project').css('height'));
-        }
-        else {
-          $('.quote').css('height', 'auto');
-        }
-      };
-
-      resizeQuotes();
-      window.onresize = resizeQuotes;
-    });
-  </script>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-38944056-4', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-
 </head>
