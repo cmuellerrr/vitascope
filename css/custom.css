@@ -238,6 +238,10 @@ a.btn:hover {
         margin-left: 20px;
     }
 
+    .nav-list .btn {
+        padding: 5px;
+    }
+
 }
 
 
