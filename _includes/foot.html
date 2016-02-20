@@ -9,16 +9,19 @@
 
         var resizeQuotes = function () {
             if (window.innerWidth > 550) {
-                $('.quote').css('height', $('.project').css('height'));
+                $('.quote').css('height', ($('.project').height() - 1) + "px");
             }
             else {
                 $('.quote').css('height', 'auto');
             }
         };
 
-        resizeQuotes();
         window.onresize = resizeQuotes;
     });
+
+    window.onload = function() {
+        window.onresize();
+    };
 </script>
 
 <script>
