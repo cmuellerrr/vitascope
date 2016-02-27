@@ -190,6 +190,10 @@ a.btn:hover {
     margin-left: 30px;
 }
 
+.nav-list li:first-child {
+    margin-left: 0;
+}
+
 .nav-list li a:not(.btn) {
             transition: all 300ms;
          -o-transition: all 300ms;
