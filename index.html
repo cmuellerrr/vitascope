@@ -21,55 +21,59 @@ class: home
 </div>
 
 <div class="page-body">
-    <div class="content-wrapper">
 
-        <div class="item-set clearfix">
-        {% for post in site.posts %}
-            <div class="item-wrapper project">
-                <div class="project-thumb" rel="{{ post.video_id }}" >
-                    <!--<img src="{{ site.baseurl}}/images/thumb-overlay.png" alt="" class="play"/>-->
-                    <img src="{{ site.baseurl}}/images/thumbnails/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
+    <div class="projects">
+        <div class="content-wrapper">
+
+            <div class="item-set clearfix" id="projects">
+            {% for post in site.posts %}
+                <div class="item-wrapper project">
+                    <div class="project-thumb" rel="{{ post.video_id }}" >
+                        <img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
+                    </div>
+                    <div class="project-details">
+                        <h3>{{ post.client }}</h3>
+                        <p><a class="secondary" href="{{ site.baseurl }}{{ post.url }}">"{{post.video_title}}"</a></p>
+                    </div>
                 </div>
-                <div class="project-details">
-                    <h3>{{ post.client }}</h3>
-                    <p><a class="secondary" href="{{ site.baseurl }}{{ post.url }}">"{{post.video_title}}"</a></p>
-                </div>
+            {% endfor %}
             </div>
 
-            {% if forloop.index == 4 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"These guys set the bar really high."</p>
-                <p class="quote-attribution">The Crowdfund Mafia</p>
-            </div>
-            {% endif %}
+            <div class="more"><a href="{{ site.baseurl }}/projects">See More Videos</a></div>
 
-            {% if forloop.index == 8 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"The team met and exceeded my original expectations."</p>
-                <p class="quote-attribution">Simpliflow Sports</p>
-            </div>
-            {% endif %}
-
-            {% if forloop.index == 10 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"These guys set the bar really high."</p>
-                <p class="quote-attribution">The Crowdfund Mafia</p>
-            </div>
-            {% endif %}
-
-            {% if forloop.index == 14 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"The team met and exceeded my original expectations."</p>
-                <p class="quote-attribution">Simpliflow Sports</p>
-            </div>
-            {% endif %}
-
-        {% endfor %}
         </div>
-
-        <div class="more"><a href="{{ site.baseurl }}/projects">See More Videos</a></div>
-
     </div>
+
+    <div class="recommendations">
+        <div class="content-wrapper">
+
+            <div class="item-set clearfix" id="quotes">
+                <div class="item-wrapper quote">
+                    <div class="quote-thumb">
+                        <img src="{{ site.baseurl }}/images/portraits/crowdfund-mafia.jpg" alt="Crowdfund Mafia Logo">
+                    </div>
+                    <div class="quote-details">
+                        <p class="quote-text">"These guys set the bar really high."</p>
+                        <p class="quote-attribution">The Crowdfund Mafia</p>
+                        <p><a href="{{ site.baseurl }}/projects/momas">View Project</a></p>
+                    </div>
+                </div>
+
+                <div class="item-wrapper quote">
+                    <div class="quote-thumb">
+                        <img src="{{ site.baseurl }}/images/portraits/simpliflow-sports.png" alt="Simpliflow Sports Logo">
+                    </div>
+                    <div class="quote-details">
+                        <p class="quote-text">"The Vitascope Arts team met and exceeded my original expectations."</p>
+                        <p class="quote-attribution">Simpliflow Sports</p>
+                        <a href="{{ site.baseurl }}/projects/simpliflow-sports">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
 <div class="page-footer">

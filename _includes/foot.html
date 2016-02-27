@@ -6,22 +6,7 @@
             height: 480,
             showBorder: false
         });
-
-        var resizeQuotes = function () {
-            if (window.innerWidth > 550) {
-                $('.quote').css('height', ($('.project').height() - 1) + "px");
-            }
-            else {
-                $('.quote').css('height', 'auto');
-            }
-        };
-
-        window.onresize = resizeQuotes;
     });
-
-    window.onload = function() {
-        window.onresize();
-    };
 </script>
 
 <script>

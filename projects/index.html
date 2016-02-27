@@ -14,42 +14,13 @@ class: projects
 
             <div class="item-wrapper project">
                 <div class="project-thumb" rel="{{ post.video_id }}" >
-                    <!--<img src="{{ site.baseurl}}/images/thumb-overlay.png" alt="" class="play"/>-->
-                    <img src="{{ site.baseurl}}/images/thumbnails/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
+                    <img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
                 </div>
                 <div class="project-details">
                     <h3>{{ post.client }}</h3>
                     <p><a class="secondary" href="{{ site.baseurl }}{{ post.url }}">"{{post.video_title}}"</a></p>
                 </div>
             </div>
-
-            {% if forloop.index == 4 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"These guys set the bar really high."</p>
-                <p class="quote-attribution">The Crowdfund Mafia</p>
-            </div>
-            {% endif %}
-
-            {% if forloop.index == 8 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"The team met and exceeded my original expectations."</p>
-                <p class="quote-attribution">Simpliflow Sports</p>
-            </div>
-            {% endif %}
-
-            {% if forloop.index == 10 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"These guys set the bar really high."</p>
-                <p class="quote-attribution">The Crowdfund Mafia</p>
-            </div>
-            {% endif %}
-
-            {% if forloop.index == 14 %}
-            <div class="item-wrapper quote">
-                <p class="quote-text">"The team met and exceeded my original expectations."</p>
-                <p class="quote-attribution">Simpliflow Sports</p>
-            </div>
-            {% endif %}
 
         {% endfor %}
         </div>
