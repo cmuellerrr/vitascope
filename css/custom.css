@@ -367,6 +367,10 @@ a.btn:hover {
     margin-left: 0;
 }
 
+.project {
+    background-color: white;
+}
+
 .project-thumb {
     line-height: 0;
 
