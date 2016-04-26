@@ -9,7 +9,7 @@ body {
     font-family: "Muli", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 300;
-    color: #9099A3;
+    color: #7C848E;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,7 +23,7 @@ h3 { font-size: 1.6rem; }
 h4 { font-size: 1.0rem; }
 
 a { color: #22B0FF; text-decoration: none; font-weight: 400;}
-a.secondary { color: #9099A3; }
+a.secondary { color: #7C848E; }
 a.secondary:hover { text-decoration: underline; }
 
 a.btn {
@@ -202,7 +202,7 @@ a.btn:hover {
 }
 
 .nav-list li a:not(.btn):hover {
-    color: #9099A3;
+    color: #7C848E;
 }
 
 .nav-list .mobile {
@@ -666,7 +666,7 @@ ol.notes {
 
 ol.notes li {
     margin-bottom: 10px;
-    color: #9099A3;
+    color: #7C848E;
 }
 
 ol.notes li img.avatar {
