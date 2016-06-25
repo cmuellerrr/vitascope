@@ -27,6 +27,7 @@ class: home
 
             <div class="item-set clearfix" id="projects">
             {% for post in site.posts %}
+                {% if post.featured == true %}
                 <div class="item-wrapper project">
                     <div class="project-thumb" rel="{{ post.video_id }}" >
                         <img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
@@ -36,6 +37,7 @@ class: home
                         <p><a class="secondary" href="{{ site.baseurl }}{{ post.url }}">"{{post.video_title}}"</a></p>
                     </div>
                 </div>
+                {% endif %}
             {% endfor %}
             </div>
 
