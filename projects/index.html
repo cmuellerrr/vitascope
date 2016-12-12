@@ -13,8 +13,9 @@ class: projects
         {% for post in site.posts %}
 
             <div class="item-wrapper project">
-                <div class="project-thumb" rel="{{ post.video_id }}" >
-                    <img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="thumb u-max-full-width"/>
+                <div class="project-thumb">
+                    <img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="popup-thumb thumb u-max-full-width" rel="{{ post.video_id }}"/>
+                    <a class="link-thumb" href="{{ site.baseurl }}{{ post.url }}"><img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="thumb u-max-full-width"/></a>
                 </div>
                 <div class="project-details">
                     <h3>{{ post.client }}</h3>
