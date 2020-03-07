@@ -4,22 +4,17 @@ title: We make commercials
 class: home
 ---
 
-<div class="page-header welcome">
-    <div class="welcome-bg"></div>
-    <div class="content-wrapper">
-
-        <div class="welcome-logo">
-            <img src="{{ site.baseurl }}/images/logo.png" alt="Vitascope Arts">
+<div class="featured-list">
+    <div class="featured">
+        <div class="featured-details">
+            <p class="featured-client">Levis x 49ers</p>
+            <p class="featured-title">We are San Francisco</p>
         </div>
-
-        <div class="welcome-text">
-            <h1>At Vitascope Arts, we help businesses show off their products with attention-grabbing videos.</h1>
-            <p><a class="secondary" href="{{ site.baseurl}}/about">Learn more &#187;</a></p>
-        </div>
-
     </div>
 </div>
 
+
+<!--
 <div class="page-body">
 
     <div class="projects">
@@ -49,76 +44,13 @@ class: home
 
         </div>
     </div>
-<!--
-    <div class="recommendations">
-        <div class="content-wrapper">
-
-            <div class="item-set clearfix" id="quotes">
-                <div class="item-wrapper quote">
-                    <div class="quote-thumb">
-                        <img src="{{ site.baseurl }}/images/portraits/crowdfund-mafia.jpg" alt="Crowdfund Mafia Logo">
-                    </div>
-                    <div class="quote-details">
-                        <p class="quote-text">"These guys set the bar really high."</p>
-                        <p class="quote-attribution">The Crowdfund Mafia</p>
-                        <p><a href="{{ site.baseurl }}/projects/momas">View Project</a></p>
-                    </div>
-                </div>
-
-                <div class="item-wrapper quote">
-                    <div class="quote-thumb">
-                        <img src="{{ site.baseurl }}/images/portraits/simpliflow-sports.png" alt="Simpliflow Sports Logo">
-                    </div>
-                    <div class="quote-details">
-                        <p class="quote-text">"The Vitascope Arts team met and exceeded my original expectations."</p>
-                        <p class="quote-attribution">Simpliflow Sports</p>
-                        <a href="{{ site.baseurl }}/projects/simpliflow-sports">View Project</a>
-                    </div>
-                </div>
-
-                <div class="item-wrapper quote">
-                    <div class="quote-thumb">
-                        <img src="{{ site.baseurl }}/images/portraits/intbridge.jpeg" alt="Helium Logo">
-                    </div>
-                    <div class="quote-details">
-                        <p class="quote-text">"[...] knows how to produce a great video and walks us through each step of the production process."</p>
-                        <p class="quote-attribution">IntBridge LLC</p>
-                        <a href="{{ site.baseurl }}/projects/helium">View Project</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
+</div>
 -->
-</div>
-
-<div class="page-footer">
-    <div class="content-wrapper">
-
-        <h1>Like what you see?</h1>
-        <p>Let's work together! Tell us a little about what you are looking for, when you want it, and your budget and we'll see what we can do. Just send an email to <a href="{{ site.mailto }}">{{ site.email }}</a>.</p>
-
-    </div>
-</div>
 
 <script type="text/javascript">
 
     $(document).ready(function () {
-        $window = $(window);
-        $window.scroll(function() {
-            $scroll_position = $window.scrollTop();
 
-            if ($scroll_position > 500) {
-                $('.site-header').addClass('sticky');
-            }
-            else {
-                $('.site-header').removeClass('sticky');
-            }
-        });
-
-        $window.scroll();
      });
 
 </script>
