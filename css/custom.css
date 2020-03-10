@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Baron;
+  src: url(/assets/Baron/BaronNeue-Regular.otf);
+}
+
+
 * {
     -moz-box-sizing: border-box;
          box-sizing: border-box;
@@ -6,41 +12,70 @@
 html { font-size: 62.5%; }
 
 body {
-    font-family: "Muli", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.4rem;
+    font-family: "Poppins", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
     font-weight: 300;
     color: #FFFFFF;
     background: #000000;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #222222;
+    font-family: "Baron", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: lowercase;
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.0rem; }
+h1 { font-size: 12.8rem; }
+h2 { font-size: 4.8rem; }
+h3 { font-size: 3.2rem; }
+h4 { font-size: 1.8rem; }
 
-a { color: #22B0FF; text-decoration: none; font-weight: 400;}
-a.secondary { color: #7C848E; }
-a.secondary:hover { text-decoration: underline; }
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+
+    transition: all 300ms;
+    -o-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+
+a:hover { color: #7C848E; }
 
 a.btn {
     padding: 10px;
     border: 2px solid #FFFFFF;
     border-radius: 3px;
 
-            transition: all 300ms;
-         -o-transition: all 300ms;
-       -moz-transition: all 300ms;
+    transition: all 300ms;
+    -o-transition: all 300ms;
+    -moz-transition: all 300ms;
     -webkit-transition: all 300ms;
 }
 
-a.btn:hover {
-    background-color: #FFFFFF;
-    color: #272B3A;
+a.btn:hover { background-color: #FFFFFF; color: #7C848E; }
+
+
+ul.inline li {
+    display: inline-block;
+}
+
+ul.inline li:first-child {
+    margin-left: 0;
+}
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/** CONTAINERS **/
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .image-wrapper {
@@ -64,22 +99,6 @@ a.btn:hover {
 }
 
 
-.clearfix {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-/** CONTAINERS **/
-
-.content-wrapper {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-}
-
-
 /** HEADER **/
 
 
@@ -89,6 +108,14 @@ a.btn:hover {
     top: 0;
     width: 100%;
     padding: 32px;
+}
+
+.projects .site-header {
+    position: initial;
+}
+
+.nav-wrapper * {
+    margin: 0;
 }
 
 .nav-logo,
@@ -113,23 +140,16 @@ a.btn:hover {
 }
 
 .nav-list li {
-    display: inline-block;
     margin-left: 48px;
-}
-
-.nav-list li:first-child {
-    margin-left: 0;
+    font-family: "Baron", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: lowercase;
 }
 
 .nav-list li a {
-            transition: all 300ms;
-         -o-transition: all 300ms;
-       -moz-transition: all 300ms;
+    transition: all 300ms;
+    -o-transition: all 300ms;
+    -moz-transition: all 300ms;
     -webkit-transition: all 300ms;
-}
-
-.nav-list li a:hover {
-    color: #7C848E;
 }
 
 
@@ -158,29 +178,43 @@ a.btn:hover {
 }
 
 .links-list li {
-    display: inline-block;
     margin-left: 24px;
 }
 
-.links-list li:first-child {
-    margin-left: 0;
+.fa {
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
 }
 
 
+/** HOME **/
 
-.featured {
+.featured,
+.featured video {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
     text-align: center;
 }
 
 .featured-details {
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: 100%;
 }
 
+.featured-client {
+    margin-bottom: 0;
+}
+
+.featured-title {
+    font-size: 32px;
+    margin-top: -32px;
+}
 
 /* PHABLET */
 @media (max-width: 550px) {
