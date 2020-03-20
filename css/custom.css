@@ -110,7 +110,7 @@ ul.inline li:first-child {
     padding: 32px;
 }
 
-.projects .site-header {
+.work .site-header {
     position: initial;
 }
 
@@ -191,33 +191,99 @@ ul.inline li:first-child {
 
 /** HOME **/
 
-.featured,
-.featured video {
-    position: absolute;
-    bottom: 0;
+.feature-wrapper {
+    position: fixed;
     right: 0;
+    bottom: 0;
     min-width: 100%;
     min-height: 100%;
     text-align: center;
 }
 
-.featured-details {
+.feature-wrapper video {
     position: absolute;
-    top: 40%;
-    width: 100%;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
-.featured-client {
+.feature-details {
+    position: absolute;
+    width: 100%;
+    top: 45%;
+}
+
+.feature-client {
+    line-height: 120px;
+    margin: 0;
+}
+
+.feature-title {
+    font-size: 32px;
+    margin-top: -16px;
     margin-bottom: 0;
 }
 
-.featured-title {
-    font-size: 32px;
-    margin-top: -32px;
-}
 
 /* PHABLET */
 @media (max-width: 550px) {
+    .no-mobile {
+        display: none !important;
+    }
+
+    .feature-details {
+        top: initial;
+        bottom: 32px;
+    }
+
+    .feature-client {
+        font-size: 32px;
+        line-height: initial;
+    }
+
+    .feature-title {
+        font-size: initial;
+        margin-top: 0;
+    }
+
+}
 
 
+
+.project-list {
+    position: relative;
+    width: 100%;
+}
+
+.project-wrapper {
+    position: relative;
+    float: left;
+    width: 33%;
+    height: 200px;
+    text-align: center;
+}
+
+.project-wrapper video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.project-details {
+    position: absolute;
+    width: 100%;
+    bottom: 32px;
+}
+
+.project-client {
+    font-size: 24px;
+    margin: 0;
+}
+
+.project-title {
+    margin-top: -4px;
+    margin-bottom: 0;
 }
