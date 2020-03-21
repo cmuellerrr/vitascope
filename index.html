@@ -4,14 +4,15 @@ title: We make commercials
 class: home
 ---
 
-<div class="feature-list">
-    <div class="feature-wrapper">
+<div class="slideshow">
+    <div class="slide">
         <video autoplay muted loop>
             <source src="{{ site.baseurl}}/images/reel-clip.mp4" type="video/mp4">
         </video>
-        <div class="feature-details">
-            <h1 class="feature-client">Levis x 49ers</h1>
-            <p class="feature-title">We are San Francisco</p>
+        <div class="slide-details" data-video-id="110184946">
+            <h1 class="slide-client">Levis x 49ers</h1>
+            <p class="slide-title title">We are San Francisco</p>
+            <p class="slide-title play">Play</p>
         </div>
     </div>
 </div>
@@ -53,7 +54,9 @@ class: home
 <script type="text/javascript">
 
     $(document).ready(function () {
-
+        setTimeout(function () {
+            $(".slide").addClass("active");
+        }, 400);
      });
 
 </script>
