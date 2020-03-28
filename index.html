@@ -6,9 +6,7 @@ class: home
 
 <div class="slideshow">
     <div class="slide">
-        <video autoplay muted loop>
-            <source src="{{ site.baseurl}}/images/reel-clip.mp4" type="video/mp4">
-        </video>
+        <video src="{{ site.baseurl}}/images/reel-clip.mp4" type="video/mp4" poster="" autoplay muted loop playsInline></video>
         <div class="slide-details" data-video-id="110184946">
             <h1 class="slide-client">Levis x 49ers</h1>
             <p class="slide-title title">We are San Francisco</p>
@@ -17,46 +15,20 @@ class: home
     </div>
 </div>
 
+<footer class="site-footer clearfix">
+    <div class="content-wrapper">
 
-<!--
-<div class="page-body">
-
-    <div class="projects">
-        <div class="content-wrapper">
-            <div class="video-wrapper reel">
-                <iframe src="//player.vimeo.com/video/308587381?title=0&byline=0&portrait=0" class="u-max-full-width" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-
-            <div class="item-set clearfix" id="projects">
-            {% for post in site.posts %}
-                {% if post.featured == true %}
-                <div class="item-wrapper project">
-                    <div class="project-thumb">
-                        <img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="popup-thumb thumb u-max-full-width" rel="{{ post.video_id }}"/>
-                        <a class="link-thumb" href="{{ site.baseurl }}{{ post.url }}"><img src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}" class="thumb u-max-full-width"/></a>
-                    </div>
-                    <div class="project-details">
-                        <h3>{{ post.client }}</h3>
-                        <p><a class="secondary" href="{{ site.baseurl }}{{ post.url }}">"{{post.video_title}}"</a></p>
-                    </div>
-                </div>
-                {% endif %}
-            {% endfor %}
-            </div>
-
-            <div class="more"><a href="{{ site.baseurl }}/projects">See all videos</a></div>
-
+        <div class="tagline-wrapper">
+            <h4>We make commercials</h4>
         </div>
+
+        <div class="social-wrapper">
+            <ul class="social-list inline">
+                <li><a class="fa fa-facebook" href="http://www.twitter.com/{{ site.twitter_username }}" target="_blank"></a></li>
+                <li><a class="fa fa-twitter" href="http://www.facebook.com/{{ site.facebook_username }}" target="_blank"></a></li>
+                <li><a class="fa fa-instagram" href="http://www.instagram.com/{{ site.instagram_username }}" target="_blank"></a></li>
+            </ul>
+        </div>
+
     </div>
-</div>
--->
-
-<script type="text/javascript">
-
-    $(document).ready(function () {
-        setTimeout(function () {
-            $(".slide").addClass("active");
-        }, 400);
-     });
-
-</script>
+</footer>
