@@ -92,6 +92,24 @@ ul.inline li:first-child {
 .scale-down { object-fit: scale-down; }
 .none { object-fit: none; }
 
+.mobile-only {
+    display: none;
+}
+
+/** PHABLET **/
+@media (max-width: 550px) {
+    body {
+        font-size: 1.6rem;
+    }
+}
+
+/** MOBILE **/
+@media (max-width: 420px) {
+    .mobile-only {
+        display: initial;
+    }
+}
+
 
 /** CONTAINERS **/
 
@@ -129,8 +147,7 @@ ul.inline li:first-child {
     padding: 32px;
 }
 
-.home .site-header,
-.about .site-header {
+.home .site-header {
     position: fixed;
     z-index: 99;
     top: 0;
@@ -174,7 +191,6 @@ ul.inline li:first-child {
     }
 
     .nav-list li {
-        font-size: 16px;
         margin-left: 24px;
     }
 }
@@ -278,7 +294,7 @@ ul.inline li:first-child {
 
 .slide-title.play {
     opacity: 0;
-    transform: translateY(-35px);
+    transform: translateY(-31px);
     text-transform: uppercase;
 }
 
@@ -344,10 +360,10 @@ ul.inline li:first-child {
     bottom: 16px;
     opacity: 0;
 
-    transition: all 400ms;
-    -o-transition: all 400ms;
-    -moz-transition: all 400ms;
-    -webkit-transition: all 400ms;
+    transition: opacity 400ms, bottom 400ms;
+    -o-transition: opacity 400ms, bottom 400ms;
+    -moz-transition: opacity 400ms, bottom 400ms;
+    -webkit-transition: opacity 400ms, bottom 400ms;
 }
 
 .project-wrapper:hover .project-details {
@@ -377,12 +393,18 @@ ul.inline li:first-child {
     .project-wrapper {
         width: 100%;
     }
+
+    .project-details {
+        bottom: 24px;
+        opacity: 1;
+    }
 }
 
 
 /* ABOUT */
 
-.about-wrapper {
+.about-background {
+    z-index: -99;
     position: fixed;
     right: 0;
     bottom: 0;
@@ -390,19 +412,11 @@ ul.inline li:first-child {
     min-height: 100%;
 }
 
-.about-wrapper img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
 .about-details {
-    position: absolute;
     max-width: 800px;
-    top: 32%;
-    padding: 0 64px;
+    padding-left: 64px;
+    padding-right: 64px;
+    margin-bottom: 64px;
 
     animation-name: appear;
     animation-duration: .8s;
@@ -411,18 +425,19 @@ ul.inline li:first-child {
 }
 
 .about-details h2 {
+    margin-top: 64px;
     margin-bottom: 16px;
 }
 
-.about-details a {
-    margin-top: 16px;
+.about-details .btn {
+    margin: 16px 0;
 }
 
-/* SD */
-@media (max-width: 960px) {
+/* PHABLET */
+@media (max-width: 550px) {
     .about-details {
-        top: 30%;
-        padding: 0 32px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
 
     .about-details h2 {
