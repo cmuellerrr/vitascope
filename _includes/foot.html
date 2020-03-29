@@ -7,6 +7,17 @@
         $(".project-wrapper").modalVideo({
             channel:'vimeo'
         });
+
+        //var $cycle = $(".home .slideshow").cycle({
+          fx: "scrollHorz",
+          speed: 800,
+          timeout: 40000,
+          slides: "> .slide",
+          allowWrap: true,
+          manualTrump: false,
+          autoHeight: false,
+          slideActiveClass: "active",
+        });
     });
 </script>
 
@@ -20,3 +31,112 @@
     ga('send', 'pageview');
 
 </script>
+<!--
+<script>
+function() {
+    // Start home slideshow
+    var $cycle = jQuery(".home .slideshow").cycle({
+      fx: "scrollHorz",
+      speed: 800,
+      timeout: 4000,
+      slides: "> .slide",
+      allowWrap: true,
+      manualTrump: false,
+      autoHeight: false,
+      slideActiveClass: "active",
+      next: "> .next",
+      prev: "> .prev"
+    });
+
+    // Load and play video
+    $cycle.on("cycle-before", function(
+      event,
+      optionHash,
+      outgoingSlideEl,
+      incomingSlideEl,
+      forwardFlag
+    ) {
+      var $slide = jQuery(incomingSlideEl);
+      var video = $slide.data("video");
+
+      // Add new video to slide
+      if (video) {
+        $slide.find(".wp-post-image").remove();
+        $slide.append(video);
+      }
+
+      // Set color scheme
+      var color = $slide.data("color-scheme");
+      jQuery("body")
+        .removeClass("white-chrome black-chrome")
+        .addClass(color);
+    });
+
+    // Load first video
+    $cycle.trigger("cycle-before", [
+      null,
+      null,
+      jQuery(".slide:eq(0)").get(0),
+      null
+    ]);
+
+    // Destroy old videos
+    $cycle.on("cycle-after", function(
+      event,
+      optionHash,
+      outgoingSlideEl,
+      incomingSlideEl,
+      forwardFlag
+    ) {
+      jQuery(outgoingSlideEl)
+        .find("video")
+        .remove();
+    });
+
+    // Mouse control
+    jQuery("body.home").scrollsteps({
+      up: function() {
+        $cycle.cycle("prev");
+        $cycle.cycle("pause");
+      },
+      down: function() {
+        $cycle.cycle("next");
+        $cycle.cycle("pause");
+      }
+    });
+
+    // Slide up Lenny
+    var once = true;
+    $cycle.on("cycle-after", function(
+      event,
+      optionHash,
+      outgoingSlideEl,
+      incomingSlideEl,
+      forwardFlag
+    ) {
+      if (optionHash.slideNum === 2 && once) {
+        jQuery("body").addClass("lenny-opened");
+
+        jQuery(".lenny-slider").on(
+          "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
+          function() {
+            setTimeout(function() {
+              jQuery(".lenny-slider").addClass("active");
+            }, 3000);
+          }
+        );
+
+        setTimeout(function() {
+          jQuery("body").removeClass("lenny-opened");
+        }, 10000);
+
+        once = false;
+      }
+    });
+
+    $cycle.click(function() {
+      $cycle.cycle("pause");
+    });
+};
+</script>
+-->

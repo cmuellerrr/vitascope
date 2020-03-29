@@ -207,7 +207,7 @@ var defaults = {
   },
   allowFullScreen: true,
   allowAutoplay: true,
-  animationSpeed: 300,
+  animationSpeed: 400,
   classNames: {
     modalVideo: 'modal-video',
     modalVideoClose: 'modal-video-close',
