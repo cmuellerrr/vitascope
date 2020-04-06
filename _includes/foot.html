@@ -8,7 +8,17 @@
             channel:'vimeo'
         });
 
-        //var $cycle = $(".home .slideshow").cycle({
+        setInterval(function() {
+          $('#slideshow > div:first')
+            .fadeOut(800)
+            .next()
+            .delay(400)
+            .fadeIn(800, function() {
+                $('#slideshow').append($('#slideshow .slide:first'));
+            });
+        },  8000);
+
+        /*var $cycle = $(".home .slideshow").cycle({
           fx: "scrollHorz",
           speed: 800,
           timeout: 40000,
@@ -17,7 +27,7 @@
           manualTrump: false,
           autoHeight: false,
           slideActiveClass: "active",
-        });
+        });*/
     });
 </script>
 
@@ -64,12 +74,6 @@ function() {
         $slide.find(".wp-post-image").remove();
         $slide.append(video);
       }
-
-      // Set color scheme
-      var color = $slide.data("color-scheme");
-      jQuery("body")
-        .removeClass("white-chrome black-chrome")
-        .addClass(color);
     });
 
     // Load first video
@@ -102,35 +106,6 @@ function() {
       down: function() {
         $cycle.cycle("next");
         $cycle.cycle("pause");
-      }
-    });
-
-    // Slide up Lenny
-    var once = true;
-    $cycle.on("cycle-after", function(
-      event,
-      optionHash,
-      outgoingSlideEl,
-      incomingSlideEl,
-      forwardFlag
-    ) {
-      if (optionHash.slideNum === 2 && once) {
-        jQuery("body").addClass("lenny-opened");
-
-        jQuery(".lenny-slider").on(
-          "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",
-          function() {
-            setTimeout(function() {
-              jQuery(".lenny-slider").addClass("active");
-            }, 3000);
-          }
-        );
-
-        setTimeout(function() {
-          jQuery("body").removeClass("lenny-opened");
-        }, 10000);
-
-        once = false;
       }
     });
 
