@@ -8,6 +8,7 @@ class: work
     {% for post in site.posts %}
 
     <div class="project-wrapper" data-video-id="{{ post.video_id }}">
+        <div class="skrim"></div>
         <img class="u-full-width cover" src="{{ site.baseurl}}/images/projects/{{ post.video_thumb }}"/>
         <div class="project-details">
             <h3 class="project-client">{{ post.client }}</h3>

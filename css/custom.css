@@ -1,7 +1,20 @@
 @font-face {
   font-family: Baron;
-  src: url(/assets/Baron/BaronNeue-Regular.otf);
+  src: url(/assets/fonts/BaronNeue-Regular.otf);
 }
+
+@font-face {
+  font-family: Wotford-Extralight;
+  src: url('/assets/fonts/Wotfard-Extralight.woff2') format('woff'),
+       url('/assets/fonts/Wotfard-Extralight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Wotford-Regular;
+  src: url('/assets/fonts/Wotfard-Regular.woff2') format('woff'),
+       url('/assets/fonts/Wotfard-Regular.ttf') format('truetype');
+}
+
 
 @keyframes appear {
   from { opacity: 0; padding-top: 16px;}
@@ -21,7 +34,7 @@
 html { font-size: 62.5%; }
 
 body {
-    font-family: "Poppins", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Wotford-Extralight", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.8rem;
     font-weight: 200;
     color: #FFFFFF;
@@ -158,7 +171,7 @@ video::-webkit-media-controls-start-playback-button {
 
 .nav-logo {
     line-height: 0;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .nav-logo a {
@@ -171,20 +184,18 @@ video::-webkit-media-controls-start-playback-button {
     background-position: center center;
 }
 
+.nav-logo a:hover { opacity: 1; }
+
 .nav-list li {
     margin-left: 48px;
-    font-family: "Baron", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: lowercase;
+    font-family: "Wotford-Regular", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 /* PHABLET */
 @media (max-width: 550px) {
     .site-header {
         padding: 32px 16px;
-    }
-
-    .nav-logo {
-        margin-bottom: 24px;
     }
 
     .nav-list li {
@@ -216,6 +227,11 @@ video::-webkit-media-controls-start-playback-button {
 .tagline-wrapper *,
 .social-wrapper * {
     margin: 0;
+}
+
+.tagline-wrapper {
+    font-family: "Wotford-Regular", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 .social-wrapper {
@@ -326,6 +342,7 @@ video::-webkit-media-controls-start-playback-button {
 
 .slide-title {
     font-size: 3.2rem;
+    transform: translateY(-32%);
 
     transition: opacity 400ms;
     -o-transition: opacity 400ms;
@@ -335,7 +352,7 @@ video::-webkit-media-controls-start-playback-button {
 
 .slide-title.play {
     opacity: 0;
-    margin-top: -48px;
+    transform: translateY(-132%);
     text-transform: uppercase;
 }
 
@@ -361,11 +378,11 @@ video::-webkit-media-controls-start-playback-button {
 
     .slide-title {
         font-size: initial;
-        margin-top: 0;
+        transform: translateY(0%);
     }
 
     .slide-title.play {
-        margin-top: -25px;
+        transform: translateY(-100%);
     }
 }
 
@@ -449,7 +466,7 @@ video::-webkit-media-controls-start-playback-button {
     position: absolute;
     max-width: 800px;
     top: 32%;
-    padding: 64px;
+    padding: 0 64px;
 
 
     animation-name: appear;
