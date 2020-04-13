@@ -31,6 +31,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Baron", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: lowercase;
+    line-height: 1em;
 }
 
 h1 { font-size: 12.8rem; }
@@ -39,7 +40,7 @@ h3 { font-size: 2.4rem; }
 h4 { font-size: 1.8rem; }
 
 /** HD **/
-@media (min-width: 1441px) {
+@media (min-width: 1600px) {
     h1 { font-size: 16.0rem; }
     h2 { font-size: 12.8rem; }
     body { font-size: 2.0rem; }
@@ -58,13 +59,13 @@ a {
     color: #FFFFFF;
     text-decoration: none;
 
-    transition: color 300ms;
-    -o-transition: color 300ms;
-    -moz-transition: color 300ms;
-    -webkit-transition: color 300ms;
+    transition: opacity 400ms;
+    -o-transition: opacity 400ms;
+    -moz-transition: opacity 400ms;
+    -webkit-transition: opacity 400ms;
 }
 
-a:hover { color: #7C848E; }
+a:hover { opacity: .6; }
 
 a.btn {
     display: inline-block;
@@ -73,10 +74,10 @@ a.btn {
     border-radius: 3px;
     text-transform: uppercase;
 
-    transition: background-color 300ms, color 300ms;
-    -o-transition: background-color 300ms, color 300ms;
-    -moz-transition: background-color 300ms, color 300ms;
-    -webkit-transition: background-color 300ms, color 300ms;
+    transition: background-color 400ms, color 400ms;
+    -o-transition: background-color 400ms, color 400ms;
+    -moz-transition: background-color 400ms, color 400ms;
+    -webkit-transition: background-color 400ms, color 400ms;
 }
 
 a.btn:hover { background-color: #FFFFFF; color: #000000; cursor: pointer; }
@@ -117,6 +118,10 @@ ul.inline li:first-child {
     display: none;
 }
 
+video::-webkit-media-controls-start-playback-button {
+  display: none;
+}
+
 
 /** CONTAINERS **/
 
@@ -132,11 +137,12 @@ ul.inline li:first-child {
 .site-header {
     width: 100%;
     padding: 32px;
+    z-index: 99;
 }
 
-.home .site-header {
+.home .site-header,
+.about .site-header {
     position: fixed;
-    z-index: 99;
     top: 0;
 }
 
@@ -239,12 +245,36 @@ ul.inline li:first-child {
 
 /** HOME **/
 
+.slide-control {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 32px;
+    cursor: pointer;
+
+    transition: opacity 400ms;
+    -o-transition: opacity 400ms;
+    -moz-transition: opacity 400ms;
+    -webkit-transition: opacity 400ms;
+}
+
+.slide-control.prev {
+    left: 0px;
+}
+
+.slide-control.next {
+    right: 0px;
+}
+
+.slide-control:hover { opacity: .6; }
+
 .slide {
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
@@ -252,13 +282,22 @@ ul.inline li:first-child {
     display: none;
 }
 
+.skrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2)
+}
+
 .slide-background {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -99;
     width: 100%;
     height: 100%;
+    z-index: -99;
     object-fit: cover;
 
     animation-name: fadein;
@@ -270,7 +309,8 @@ ul.inline li:first-child {
 .slide-details {
     position: absolute;
     width: 100%;
-    top: 44%;
+    top: 50%;
+    transform: translateY(-32%);
     cursor: pointer;
 
     animation-name: appear;
@@ -310,6 +350,10 @@ ul.inline li:first-child {
 
 /* PHABLET */
 @media (max-width: 550px) {
+    .slide-control {
+        display: none;
+    }
+
     .slide-details {
         top: initial;
         bottom: 32px;
@@ -373,7 +417,7 @@ ul.inline li:first-child {
 
 
 /** HD **/
-@media (min-width: 1441px) {
+@media (min-width: 1600px) {
     .project-wrapper {
         width: 25%;
     }
@@ -431,7 +475,7 @@ ul.inline li:first-child {
 
 
 /** HD **/
-@media (min-width: 1441px) {
+@media (min-width: 1600px) {
     .about-details {
         max-width: 1100px;
     }
@@ -443,82 +487,3 @@ ul.inline li:first-child {
         padding: 32px;
     }
 }
-
-/**
-.aboutslideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-}
-
-.aboutslide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    padding: 100px 64px;
-
-    display: -ms-flexbox !important;
-    display: -webkit-flex !important;
-    display: flex !important;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-.aboutslide-background {
-    z-index: -99;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-
-    animation-name: fadein;
-    animation-duration: .8s;
-    animation-delay: .2s;
-    animation-fill-mode: both;
-}
-
-.aboutslide-details {
-    max-width: 800px;
-
-    animation-name: appear;
-    animation-duration: .8s;
-    animation-delay: .8s;
-    animation-fill-mode: both;
-}
-
-.aboutslide-details h1,
-.aboutslide-details h2 {
-    margin: 0;
-}
-
-.aboutslide-details .btn {
-    margin: 16px 0;
-}
-
-.aboutslide-details .social-list {
-    animation-name: fadein;
-    animation-duration: .8s;
-    animation-delay: 1.2s;
-    animation-fill-mode: both;
-}
-

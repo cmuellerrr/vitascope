@@ -1,33 +1,51 @@
 <script>
     $(document).ready(function () {
-        $(".slide-details").modalVideo({
-            channel:'vimeo'
-        });
 
-        $(".project-wrapper").modalVideo({
-            channel:'vimeo'
-        });
+        var cycle = function(backwards) {
+            var slideshow = $('#slideshow');
+            var outgoing = slideshow.children().first();
+            var incoming = backwards ? slideshow.children().last() : slideshow.children().eq(1);
 
-        setInterval(function() {
-          $('#slideshow > div:first')
-            .fadeOut(800)
-            .next()
-            .delay(400)
-            .fadeIn(800, function() {
-                $('#slideshow').append($('#slideshow .slide:first'));
+            outgoing.fadeOut(400, function() {
+                backwards ? slideshow.prepend(incoming) : slideshow.append(outgoing);
+
+                //outgoing.find("video").remove();
+                //incoming.prepend(incoming.data("video"));
+
+                var video = incoming.find("video").get(0);
+                if (video) {
+                    //video.pause();
+                    video.currentTime = 0;
+                    //video.play();
+                }
+
+                incoming.fadeIn(400);
             });
-        },  8000);
+        };
 
-        /*var $cycle = $(".home .slideshow").cycle({
-          fx: "scrollHorz",
-          speed: 800,
-          timeout: 40000,
-          slides: "> .slide",
-          allowWrap: true,
-          manualTrump: false,
-          autoHeight: false,
-          slideActiveClass: "active",
-        });*/
+        var cyclePrev = function() {
+            cycle(true);
+            clearInterval(cycleTimer);
+        };
+
+        var cycleNext = function() {
+            cycle(false);
+            clearInterval(cycleTimer);
+        };
+
+        var cycleTimer = setInterval(function() {
+            cycle(false);
+        }, 6000);
+
+
+        $(".slide-control.prev").click(cyclePrev);
+        $(".slide-control.next").click(cycleNext);
+
+        $(".slideshow").swiperight(cyclePrev);
+        $(".slideshow").swipeleft(cycleNext);
+
+        $(".slide-details").modalVideo({channel:'vimeo'});
+        $(".project-wrapper").modalVideo({channel:'vimeo'});
     });
 </script>
 
@@ -39,79 +57,4 @@
 
     ga('create', 'UA-38944056-4', 'auto');
     ga('send', 'pageview');
-
 </script>
-<!--
-<script>
-function() {
-    // Start home slideshow
-    var $cycle = jQuery(".home .slideshow").cycle({
-      fx: "scrollHorz",
-      speed: 800,
-      timeout: 4000,
-      slides: "> .slide",
-      allowWrap: true,
-      manualTrump: false,
-      autoHeight: false,
-      slideActiveClass: "active",
-      next: "> .next",
-      prev: "> .prev"
-    });
-
-    // Load and play video
-    $cycle.on("cycle-before", function(
-      event,
-      optionHash,
-      outgoingSlideEl,
-      incomingSlideEl,
-      forwardFlag
-    ) {
-      var $slide = jQuery(incomingSlideEl);
-      var video = $slide.data("video");
-
-      // Add new video to slide
-      if (video) {
-        $slide.find(".wp-post-image").remove();
-        $slide.append(video);
-      }
-    });
-
-    // Load first video
-    $cycle.trigger("cycle-before", [
-      null,
-      null,
-      jQuery(".slide:eq(0)").get(0),
-      null
-    ]);
-
-    // Destroy old videos
-    $cycle.on("cycle-after", function(
-      event,
-      optionHash,
-      outgoingSlideEl,
-      incomingSlideEl,
-      forwardFlag
-    ) {
-      jQuery(outgoingSlideEl)
-        .find("video")
-        .remove();
-    });
-
-    // Mouse control
-    jQuery("body.home").scrollsteps({
-      up: function() {
-        $cycle.cycle("prev");
-        $cycle.cycle("pause");
-      },
-      down: function() {
-        $cycle.cycle("next");
-        $cycle.cycle("pause");
-      }
-    });
-
-    $cycle.click(function() {
-      $cycle.cycle("pause");
-    });
-};
-</script>
--->

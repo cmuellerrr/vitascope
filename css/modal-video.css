@@ -84,3 +84,7 @@
     height: 100%
 }
 
+/* OVERRIDE */
+.modal-video-close-btn {
+    display: none;
+}
